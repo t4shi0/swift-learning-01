@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let stores = ["だっちゃ", "瀬里奈"]
+    let imageNames = ["store1.jpg", "store2.jpg"]
+    let imageTitles = ["だっちゃ", "瀬里奈"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +30,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // セルの個数を定義
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stores.count
+        return imageTitles.count
     }
     
     // セルに値を渡す
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! CustomTableViewCell
         
         // セルに表示する値の設定
-        cell.textLabel?.text = stores[indexPath.row]
+        cell.myImageView?.image = UIImage(named: imageNames[indexPath.row])
+        cell.myTitleLabel?.text = imageTitles[indexPath.row]
         
         return cell
     }
@@ -46,6 +48,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     // セルが選択された
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // セルの番号と内容をとりあえず出力
-        print("セル番号：\(indexPath.row) セルの内容：\(stores[indexPath.row])")
+        print("セル番号：\(indexPath.row) セルの内容：\(imageTitles[indexPath.row])")
     }
 }
