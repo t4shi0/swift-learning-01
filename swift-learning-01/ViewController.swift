@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
+    
+    let stores = ["だっちゃ", "瀬里奈"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,12 +18,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view.
     }
     
-    let stores = ["だっちゃ", "瀬里奈"]
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+// ViewControllerの拡張
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // セルの個数を定義
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,6 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    // セルが選択された
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // セルの番号と内容をとりあえず出力
         print("セル番号：\(indexPath.row) セルの内容：\(stores[indexPath.row])")
