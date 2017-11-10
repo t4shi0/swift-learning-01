@@ -17,19 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ot8-8e-AhB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EnT-6i-9MT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="DFM-Rn-6cP">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DFM-Rn-6cP" id="rjU-lT-bRa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ysi-j8-pBL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="raL-MV-5z7"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ot8-8e-AhB" secondAttribute="bottom" id="Ehu-jO-EhM"/>
-                            <constraint firstItem="ot8-8e-AhB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RQM-PL-bj9"/>
-                            <constraint firstItem="ot8-8e-AhB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cWH-hw-ycx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ot8-8e-AhB" secondAttribute="trailing" id="d7J-uK-LpU"/>
+                            <constraint firstItem="EnT-6i-9MT" firstAttribute="bottom" secondItem="byQ-5M-HhK" secondAttribute="bottom" id="CSA-a5-Z4u"/>
+                            <constraint firstItem="EnT-6i-9MT" firstAttribute="trailing" secondItem="byQ-5M-HhK" secondAttribute="trailing" id="ZeB-EV-xYH"/>
+                            <constraint firstItem="EnT-6i-9MT" firstAttribute="leading" secondItem="byQ-5M-HhK" secondAttribute="leading" id="axo-gW-OfM"/>
+                            <constraint firstItem="EnT-6i-9MT" firstAttribute="top" secondItem="byQ-5M-HhK" secondAttribute="top" id="mkl-Ej-KjS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="byQ-5M-HhK"/>
                     </view>
                     <navigationItem key="navigationItem" id="niq-sv-dTh"/>
                 </viewController>
@@ -53,7 +67,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Wu-fH-zed" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="134"/>
+            <point key="canvasLocation" x="-270" y="134"/>
         </scene>
     </scenes>
 </document>
